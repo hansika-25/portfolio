@@ -1,0 +1,112 @@
+/* ---------- Playful Pastel Theme (style.css) ---------- */
+:root{
+  --bg:#fffafc;
+  --card:#ffffff;
+  --muted:#7a7a86;
+  --accent1:#ffb3c6; /* pastel pink */
+  --accent2:#c7d7ff; /* pastel blue */
+  --accent3:#d7ffd9; /* pastel mint */
+  --accent4:#fbe7ff; /* lavender */
+  --shadow: 0 10px 30px rgba(25,20,40,0.06);
+  --radius: 14px;
+  --glass: rgba(255,255,255,0.6);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background:linear-gradient(180deg,var(--bg) 0%, #fff 100%); color:#212121; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+a{color:inherit}
+
+/* NAV */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;padding:18px 26px;background:transparent;
+  position:sticky;top:0;z-index:30;
+}
+.brand{font-weight:700;font-size:18px}
+.brand span{color:var(--accent1)}
+.hamburger{display:none;background:transparent;border:0;font-size:22px;cursor:pointer}
+.nav-links{display:flex;gap:14px}
+.nav-links a{padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:600}
+.nav-links a:hover{background:var(--accent4);color:#222;transform:translateY(-2px);transition:all .18s}
+
+/* HERO */
+.hero{display:flex;gap:28px;padding:34px;align-items:center;max-width:1100px;margin:18px auto}
+.hero-left{flex:1}
+.eyebrow{font-size:14px;color:var(--muted);margin-bottom:6px}
+.title{font-size:34px;margin-bottom:12px;line-height:1.05}
+.title span{background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.bio{color:var(--muted);max-width:640px;margin-bottom:14px}
+.hero-ctas{display:flex;gap:12px;margin-bottom:14px}
+.btn{display:inline-block;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:var(--shadow)}
+.btn.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#222}
+.btn.ghost{background:transparent;border:2px solid rgba(0,0,0,0.04);color:var(--muted)}
+
+/* mini stats */
+.mini-stats{display:flex;gap:12px;margin-top:20px;list-style:none;padding:0}
+.mini-stats li{background:linear-gradient(180deg,var(--accent4),#fff);padding:10px 14px;border-radius:12px;box-shadow:var(--shadow);min-width:180px}
+.mini-stats strong{display:block;font-size:13px;color:#222}
+.mini-stats span{display:block;color:var(--muted);font-size:13px;margin-top:6px}
+
+/* HERO RIGHT */
+.hero-right{width:320px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.photo-wrap{width:260px;height:260px;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border:6px solid rgba(255,255,255,0.6)}
+.profile-photo{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1);transition:transform .8s}
+.photo-wrap:hover .profile-photo{transform:scale(1.04)}
+
+/* SECTIONS */
+.section{max-width:1100px;margin:18px auto;padding:22px}
+.section-title{font-size:20px;margin-bottom:12px;color:#222;display:inline-block;border-left:6px solid var(--accent3);padding-left:10px}
+
+/* Grid helpers */
+.grid{display:grid;gap:18px}
+.projects-grid{grid-template-columns:repeat(2,1fr)}
+.cert-grid{grid-template-columns:repeat(3,1fr)}
+.project-card, .card, .cert-card{background:linear-gradient(180deg, #fff, #fff);padding:18px;border-radius:12px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.03)}
+.card-head{font-size:14px;color:var(--muted);margin-bottom:6px}
+.card-title{font-size:18px;margin-bottom:10px}
+.card-desc{color:var(--muted);line-height:1.45;margin-bottom:12px}
+.card-foot{display:flex;gap:10px;align-items:center}
+.pill{background:var(--accent3);padding:6px 10px;border-radius:999px;font-weight:700;color:#055;display:inline-block;font-size:12px}
+.working{border-left:6px solid var(--accent2)}
+
+/* certificate image */
+.cert-photo{width:100%;border-radius:10px;margin-top:10px}
+
+/* achievements list */
+.achieve-list{list-style:disc;margin-left:18px;color:var(--muted);margin-top:10px}
+
+/* connect grid */
+.connect-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+.connect-card{background:linear-gradient(180deg,var(--accent4),#fff);padding:14px;border-radius:12px;box-shadow:var(--shadow);text-align:center}
+.connect-card a{color:#0b3f3f;font-weight:700;margin-top:8px;display:inline-block}
+
+/* playlist page */
+.assign-main{max-width:900px;margin:28px auto;padding:18px}
+.playlist-cards{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+.playlist-card{padding:16px;border-radius:12px;background:linear-gradient(180deg,var(--accent2),#fff);box-shadow:var(--shadow);text-decoration:none;color:#0b2f40}
+.playlist-card h3{margin-bottom:6px}
+
+/* footer */
+.footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted)}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(18px) scale(.995);transition:opacity .6s cubic-bezier(.2,.9,.3,1),transform .6s cubic-bezier(.2,.9,.3,1)}
+.reveal.show{opacity:1;transform:none}
+
+/* responsive */
+@media (max-width:980px){
+  .projects-grid{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr}
+  .playlist-cards{grid-template-columns:1fr}
+  .connect-grid{grid-template-columns:1fr}
+  .hero{flex-direction:column;gap:18px;padding:18px}
+  .hero-right{width:100%;align-items:center}
+  .hero-left{text-align:center}
+  .photo-wrap{margin:0 auto}
+}
+
+@media (max-width:720px){
+  .nav-links{display:none}
+  .hamburger{display:inline-block}
+  .hero-right{display:flex}
+  .profile-photo{height:100%}
+}
